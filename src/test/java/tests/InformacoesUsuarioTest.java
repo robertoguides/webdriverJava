@@ -17,7 +17,7 @@ public class InformacoesUsuarioTest {
         WebDriver navegador = new ChromeDriver();
         navegador.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
 
-        // Navegando para a página
+        // Navegando à página
         navegador.get("http://www.juliodelima.com.br/taskit");
 
         // Raalizar o cadastro, clicar em no id "signup"
