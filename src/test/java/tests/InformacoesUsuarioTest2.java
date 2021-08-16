@@ -54,10 +54,10 @@ public class InformacoesUsuarioTest2 {
         navegador.findElement(By.xpath("//*[@id=\"moredata\"]/div[2]/button")).click();
 
         // Identificar a popup onde está o formulário de id addmoredata
-        WebElement popupAddMoreData = navegador.findElement(By.id("type"));
+        WebElement popupAddMoreData = navegador.findElement(By.id("addmoredata"));
 
         // No cmobo do name "type" escolhe a opção "phone"
-        WebElement campoType = popupAddMoreData.findElement(By.xpath("//*[@id=\"addmoredata\"]/div[1]/div[2]/select"));
+        WebElement campoType = popupAddMoreData.findElement(By.name("type"));
         new Select(campoType).selectByVisibleText("Phone");
 
         // No campo de name "contact" digitar "+5511930114111"
@@ -67,15 +67,15 @@ public class InformacoesUsuarioTest2 {
         popupAddMoreData.findElement(By.linkText("SAVE")).click();
 
         // Na mensagem de id "toast-container" validar que o texto é "Your contact has been added"
-        WebElement mensagemPop = navegador.findElement(By.id("tost-container"));
+        WebElement mensagemPop = navegador.findElement(By.id("toast-container"));
         String mensagem = mensagemPop.getText();
-        assertEquals("Your contact has been added", mensagem);
+        assertEquals("Your contact has been added!", mensagem);
    }
 
     @After
     public void tearDown() {
         // Fechar navegador
-        //navegador.quit();
+        navegador.quit();
 
     }
 }
